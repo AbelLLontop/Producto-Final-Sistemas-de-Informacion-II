@@ -1,0 +1,104 @@
+.contenedor_navegador{
+	z-index: 2;
+	width: 236px;
+	min-width: 236px;
+	height: 100vh;
+	background: #FFFFFF;
+	padding:0 16px;
+	box-shadow: 0 0 5px #AAAAAA;
+	position: relative;
+}
+
+
+.perfil_usuario{
+	display: flex;
+	padding: 20px;
+	gap:4px;
+	align-items: center;
+}
+.perfil_usuario img{
+	width: 60px;
+	height: 60px;
+	background: black;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.nombre{
+	color:#8C8987;
+}
+.cargo{
+	color:#3B3B3B;
+	font-weight: bold;
+}
+.inicio{
+	width: 100%;
+
+}
+.inicio a{
+	color:#3B3B41;
+	text-decoration: none;
+	fill:#1572E8;
+	gap:8px;	
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 12px 18px;	
+	border-radius: 8px;
+	font-weight: normal;
+	font-size: 16px;
+}
+.inicio a svg{
+	width: 20px;
+	height: 20px;
+}
+
+.links{
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+.seccionLinks span{
+	display: block;
+	color:#8F9499;
+	padding:20px;
+}
+.item_link {
+gap:8px;
+display: flex;
+align-items: center;
+padding:12px 18px;
+text-decoration: none;
+color:#8C8987;
+fill:#64686d;
+}
+.seleccionado{
+	position: relative;
+	color:white !important;
+	fill:white;
+	background:#1064CF;
+	border-radius: 8px;
+}
+.seleccionado svg{
+	fill:white !important;
+}
+
+.seleccionado:after{
+	content:'';
+	width: 20px;
+	height: 20px;
+	background-size: cover;
+	background-image: url('http://localhost/SI/public/svg/flecha.svg');
+	position: absolute;
+	right: 20px;
+}
+
+.item_link:hover:not(.seleccionado){
+color:#27292b;
+fill:#27292b;
+}
+
+
+.item_link svg{
+	width: 20px;
+	height: 20px;
+}

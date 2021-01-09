@@ -1,0 +1,15 @@
+*{
+	box-sizing: border-box;
+	font-family: 'calibri';
+}
+body{
+	margin:0;
+	width: 100%;
+	height: 100vh; 
+	display: flex;
+}
+
+.inline{
+	display: flex;
+	gap:16px;
+}

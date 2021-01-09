@@ -1,0 +1,72 @@
+.sombraTotal{
+	width: 100%;
+    height: 100%;
+    background: #000000ab;
+    left: 0;
+    z-index: 20;
+    position: fixed;
+    display:none;
+    place-items:center;
+}
+.contenedorFormualrioNuevo{
+	width: 600px;
+	background: white;
+}
+.contenedorFormualrioNuevo header{
+	background: #1064CF;
+	padding: 20px;	
+}
+
+.contenedorFormualrioNuevo header h4{
+	font-size: 28px;
+	font-weight: normal;
+	color:white;
+	margin: 0;
+}
+.contenedorFormualrioNuevo header p{
+	color:#ffffffa3;
+	font-size: 16px;
+}
+
+
+#formularioNuevoEmpleado{
+	display: flex;
+	flex-direction: column; 
+	gap:8px;
+	padding: 40px;
+}
+
+#formularioNuevoEmpleado label{
+	width: 100%;
+	display: flex;
+	gap:4px;
+	flex-direction: column;
+}
+#formularioNuevoEmpleado input,select{
+	border:solid 1px #C6C4C1;
+	font-size: 16px;
+	outline: none;
+	width: 100%;
+	border-radius: 4px;
+	padding: 8px;
+}
+
+.btn_cancelar{
+	background: #cf1010;
+}
+.btn_guardar{
+	background: #1064CF;
+}
+
+.btn_actualizar{
+	background: rgb(34 138 0);
+}
+
+
+
+.contenedor_botonesFormualario{
+display: flex;
+justify-content: flex-end;
+gap:20px;
+margin-top: 32px;
+}
