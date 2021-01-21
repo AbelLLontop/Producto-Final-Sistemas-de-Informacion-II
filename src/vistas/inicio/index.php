@@ -6,6 +6,10 @@ Importar::headCierre();
 Importar::componente('inicio','barraNavegacion',[
   				"seccion__inicio"=>"seleccionado"
   			]); 
-  			
+ ?>
+
+
+<?php
 Importar::footer(); 
-?>
+?> 
+

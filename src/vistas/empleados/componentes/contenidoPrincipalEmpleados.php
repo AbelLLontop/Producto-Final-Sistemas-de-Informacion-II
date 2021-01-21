@@ -1,3 +1,4 @@
+
 <section class="contenido_general">
 	<div class="inline">
 			<button id="btn_agregarNuevoEmpleado" class="btn btn_agregar"><?= Importar::SVG('persona_mas') ?>Agregar</button>
@@ -14,3 +15,4 @@
 	</div>
 
 </section>
+ 

@@ -10,8 +10,8 @@ class Inicio extends Controlador{
 		$this->vista->render('inicio/index');
 	}
 
-
 }
+
 
 
 

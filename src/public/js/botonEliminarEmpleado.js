@@ -20,3 +20,5 @@ tablaEmpleado.botonesEliminar.forEach((botonEliminar)=>{
       })}
     })
 }) 
+
+  console.log(window.location);

@@ -1,11 +1,52 @@
+:root{
+	--color_fondoNav:#FFFFFF;
+	--color_bordeLateralNav:#AAAAAA;
+
+	--color_fondoItemSeleccionado:#1064CF;
+	--color_textoItemSeleccionado:white;
+	--color_iconoItemSeleccionado:white;
+	
+	--color_textoItemNoSeleccionado:#8C8987;
+	--color_iconoItemNoSeleccionado:#64686d;
+
+	--color_iconoItemHoverSeleccionado:#27292b;
+	--color_textoItemHoverSeleccionado:#27292b;
+	
+	--color_img:black;
+	--color_cabeceraNombreNav:#8C8987;
+	--color_cabeceraCargoNav:#3B3B3B;
+	--color_botonInicio:#3B3B41;
+	--color_iconoBotonInicio:#1572E8;
+	--color_tituloAeccionLinks:#8F9499;
+
+}
+
+.nocturno{
+	--color_fondoNav:#0E1627;
+	--color_bordeLateralNav:#0A0F1B;
+	--color_cabeceraNombreNav:#D8DFE2;
+	--color_cabeceraCargoNav:#555962;
+	--color_botonInicio:white;
+	--color_iconoBotonInicio:#D8DFE2;
+	--color_fondoItemSeleccionado:none;
+	--color_textoItemSeleccionado:#1064CF;
+	--color_iconoItemSeleccionado:#1064CF;
+	--color_textoItemNoSeleccionado:#D8DFE2;
+	--color_iconoItemNoSeleccionado:#D8DFE2;
+	--color_iconoItemHoverSeleccionado:#898C8F;
+	--color_textoItemHoverSeleccionado:#898C8F;	
+	--color_tituloAccionLinks:#3F79CF;
+}
+
+
 .contenedor_navegador{
 	z-index: 2;
 	width: 236px;
 	min-width: 236px;
 	height: 100vh;
-	background: #FFFFFF;
+	background: var(--color_fondoNav);
 	padding:0 16px;
-	box-shadow: 0 0 5px #AAAAAA;
+	box-shadow: 0 0 5px var(--color_bordeLateralNav);
 	position: relative;
 }
 
@@ -19,25 +60,25 @@
 .perfil_usuario img{
 	width: 60px;
 	height: 60px;
-	background: black;
+	background: var(--color_img);
 	border-radius: 50%;
 	overflow: hidden;
 }
 .nombre{
-	color:#8C8987;
+	color:var(--color_cabeceraNombreNav);
 }
 .cargo{
-	color:#3B3B3B;
+	color:var(--color_cabeceraCargoNav);
 	font-weight: bold;
 }
 .inicio{
 	width: 100%;
-
 }
+
+
 .inicio a{
-	color:#3B3B41;
+	color:var(--color_botonInicio);
 	text-decoration: none;
-	fill:#1572E8;
 	gap:8px;	
 	display: flex;
 	align-items: center;
@@ -48,6 +89,7 @@
 	font-size: 16px;
 }
 .inicio a svg{
+	fill:var(--color_iconoBotonInicio);
 	width: 20px;
 	height: 20px;
 }
@@ -59,7 +101,7 @@
 }
 .seccionLinks span{
 	display: block;
-	color:#8F9499;
+	color:var(--color_tituloAccionLinks);
 	padding:20px;
 }
 .item_link {
@@ -68,18 +110,17 @@ display: flex;
 align-items: center;
 padding:12px 18px;
 text-decoration: none;
-color:#8C8987;
-fill:#64686d;
+color:var(--color_textoItemNoSeleccionado);
+fill:var(--color_iconoItemNoSeleccionado);
 }
 .seleccionado{
 	position: relative;
-	color:white !important;
-	fill:white;
-	background:#1064CF;
+	color:var(--color_textoItemSeleccionado)!important;
+	background:var(--color_fondoItemSeleccionado);
 	border-radius: 8px;
 }
 .seleccionado svg{
-	fill:white !important;
+	fill:var(--color_iconoItemSeleccionado) !important;
 }
 
 .seleccionado:after{
@@ -87,14 +128,14 @@ fill:#64686d;
 	width: 20px;
 	height: 20px;
 	background-size: cover;
-	background-image: url('http://localhost/SI/public/svg/flecha.svg');
+	background-image: url('http://localhost/SI/src/public/svg/flecha.svg');
 	position: absolute;
 	right: 20px;
 }
 
 .item_link:hover:not(.seleccionado){
-color:#27292b;
-fill:#27292b;
+color:var(--color_textoItemHoverSeleccionado);
+fill:var(--color_iconoItemHoverSeleccionado);
 }
 
 

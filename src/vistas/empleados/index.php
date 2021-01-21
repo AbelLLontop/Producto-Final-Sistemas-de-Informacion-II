@@ -1,4 +1,4 @@
-<?php 
+<?php  
 Importar::headInicio(); 
 Importar::listaDirecciones('empleados','css'); 
 Importar::headCierre(); 
@@ -19,3 +19,4 @@ Importar::footer()
 
 
 ?>
+ 

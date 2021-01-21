@@ -1,24 +1,54 @@
-.tabla{
-	background:white;
+:root{
+	--color_cabeceraTabla:#f3f3f3;
+	--color_textoCabeceraTabla:black;
+	--color_contenidoTabla:white;
+	--color_textoContenidoTabla:black;
+	--color_bordesTabla:#d2d2d2;
+	--color_filaHover:#f3f3f3;
+	--color_btnEditar:#1064CF;
+	--color_btnEditarHover:#1161c7;
+	--color_btnEliminar:#D64040;
+	--color_btnEliminarHover:#cc3d3d;
+	--color_btnDetalles:#1064CF;
+	--color_btnDetallesHover:#1161c7;
+}
+
+.nocturno{
+	--color_cabeceraTabla:none;
+	--color_textoCabeceraTabla:#FDFCFB;
+	--color_contenidoTabla:none;
+	--color_textoContenidoTabla:#9D99A5;
+	--color_bordesTabla:#0D1221;
+
+	--color_filaHover:#161c33;
+
+}
+
+
+
+.tabla{	
 	z-index: 2;
 	text-align: left;
 	width: 100%;
 	border-collapse: collapse;
 	border-radius: 4px;
 }
-
-.tabla tr{
-	border:solid 1px #d2d2d2;
+tbody{
+	background:var(--color_contenidoTabla);
+	color:var(--color_textoContenidoTabla);
 }
-.tabla tr:hover{
-	background: #f3f3f3;
+
+.tabla tr:hover:not(.cabecera){
+	background: var(--color_filaHover);
 }
 
 th{
-	background: #f3f3f3;
+	background: var(--color_cabeceraTabla);
+	color: var(--color_textoCabeceraTabla);
+
 }
-td,th{
-	border:solid 1px #d2d2d2;
+td,th,tr{
+	border:solid 1px var(--color_bordesTabla);
 }
 
 .tabla th{
@@ -31,36 +61,49 @@ td,th{
 
 
 .btn_editar{
-	background:#1064CF; 
+	background:var(--color_btnEditar); 
 	display: flex;
 	align-items: center;
 	gap:4px;
 }
 .btn_editar:hover{
-	background: #1161c7;
+	background: var(--color_btnEditarHover);
 }
 .btn_editar svg{
-	fill:white ;
 	width: 20px;
 	height: 20px;
 }
 .btn_eliminar{
-	background:#D64040;
+	background:var(--color_btnEliminar);
 	display: flex;
 	align-items: center;
 	gap:4px;
 }
 .btn_eliminar:hover{
-background:#cc3d3d;
+background:var(--color_btnEliminarHover);
 }
+
 .btn_eliminar svg{
-	fill:white ;
 	width: 20px;
 	height: 20px;
 }
 
-.btn_eliminar svg{
-	fill:white ;
+
+.btn_detalles{
+	background:var(--color_btnDetalles);
+	display: flex;
+	align-items: center;
+	gap:4px;
+}
+.btn_detalles:hover{
+background:var(--color_btnDetallesHover);
+}
+
+.btn_detalles svg{
 	width: 20px;
 	height: 20px;
 }
+
+
+
+

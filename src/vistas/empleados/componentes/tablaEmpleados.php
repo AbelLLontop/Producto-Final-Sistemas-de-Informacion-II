@@ -1,5 +1,6 @@
 	<table id="tablaEmpleados" class="tabla">
-  	<thead id="thead">
+  	<thead id="thead" >
+      <tr class="cabecera">
       <th>Dni</th>
   		<th>Nombre</th>
   		<th>Apellidos</th>
@@ -7,6 +8,7 @@
   		<th>Correo Electronico</th>
   		<th>Cargo</th>
   		<th>Opciones</th>
+      </tr>
   	</thead> 
   	<tbody id="tbody">
       <?php 
@@ -20,9 +22,13 @@
           <td class="fila_cargo"><?= $empleado->getCargo() ?></td>
          <td >
           <div class="inline">
-           <button data-id="<?= $empleado->getId() ?>"  class="btn btn_editar"><?=Importar::SVG('lista')?>editar</button>
+           <button data-id="<?= $empleado->getId() ?>"  class="btn btn_editar"><?=Importar::SVG('lapiz')?>editar</button>
           <button data-url=<?= Importar::direccion('GestionEmpleados/eliminarEmpleado'); ?>
             data-id="<?= $empleado->getId() ?>" class="btn btn_eliminar"><?=Importar::SVG('persona_menos')?>eliminar</button> 
+
+              <a href=<?= Importar::direccion("GestionEmpleados/detallesEmpleado?dni=".$empleado->getDni()); ?>  
+              class="btn btn_detalles"><?=Importar::SVG('lista')?>DETALLES</a> 
+
           </div>
          </td>
         </tr>

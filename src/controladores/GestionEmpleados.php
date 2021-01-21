@@ -25,6 +25,30 @@ class GestionEmpleados extends Controlador{
 		}		
 	} 
 
+
+	public function detallesEmpleado():void{
+
+		if($this->validarGetDniEmpleado()){
+			$dni = L_POST::obtenerDatosGet(['dni'])['dni']; 
+			$this->vista->dni = $dni;
+		}else{
+			$this->vista->dni = 'No se puede identificar el dni';	
+		}
+		$this->vista->render('empleados/detalles');
+	}
+
+	private function validarGetDniEmpleado():bool{
+		$validacion = false;
+		if(L_POST::validarDatosGet(['dni'])){
+			$dato = L_POST::obtenerDatosGet(['dni']);
+			if((strlen($dato['dni'])==8) && is_numeric($dato['dni'])){
+				$validacion=true;
+			}
+		}	
+		return $validacion;
+	}
+
+
 	public function actualizarEmpleado():void{
 		if($this->validarDatosEmpleado()){
 			  $empleado = $this->obtenerDatosEmpleado();
