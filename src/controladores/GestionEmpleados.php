@@ -7,13 +7,13 @@ class GestionEmpleados extends Controlador{
 		parent::__construct();
 	}
 
-	public function render():void{
+	public function render(){
 		$empleados = $this->modelo->traerListaEmpleados();
 		$this->vista->empleados = $empleados;
 		$this->vista->render('empleados/index');
 	}
 
-	public function crearEmpleado():void{
+	public function crearEmpleado(){
 		if($this->validarDatosEmpleado()){
 			  $empleado = $this->obtenerDatosEmpleado();
 			if($this->modelo->insertarEmpleado($empleado)){
@@ -26,8 +26,7 @@ class GestionEmpleados extends Controlador{
 	}
 
 
-	public function detallesEmpleado():void{
-
+	public function detallesEmpleado(){
 		if($this->validarGetDniEmpleado()){
 			$dni = L_POST::obtenerDatosGet(['dni'])['dni'];
 			$this->vista->dni = $dni;

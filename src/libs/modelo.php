@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 class Modelo{
-	protected $db;
+	protected $conexion;
 	function __construct(){
-		$this->db = new Database();
+		$this->conexion = Database::getConnect();
 	}
 }
 

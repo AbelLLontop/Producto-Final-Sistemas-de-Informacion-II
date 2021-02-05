@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 class Database{
 	private static $pdo = null;
-	
-	public static function connect(){
+
+	public static function getConnect(){
 		if(isset(self::$pdo)){
 			return self::$pdo;
 		}else{

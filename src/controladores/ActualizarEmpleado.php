@@ -5,13 +5,11 @@ include_once 'src/helpers/MENSAJES.php';
 class ActualizarEmpleado extends Controlador{
 	function __construct(){
 		parent::__construct();
-
 	}
 
 	public function render():void{
-		if($this->validarDatosEmpleado()){
-			  $empleado = $this->obtenerDatosEmpleado();
-
+		if($this->validarDatos()){
+			  $empleado = $this->obtenerDatos();
 			if($this->modelo->actualizarEmpleado($empleado)){
 				$this->redireccionar("GestionEmpleados");
 			}
@@ -30,12 +28,12 @@ class ActualizarEmpleado extends Controlador{
 	}
 
 
-	private function obtenerDatosEmpleado():array{
+	private function obtenerDatos():array{
 		$datosEmpleado = L_POST::obtenerDatosPost(['id','nombre','apellidos','telefono','correo','cargo','dni']);
 		return $datosEmpleado;
 	}
 
-	private function validarDatosEmpleado():bool{
+	private function validarDatos():bool{
 		$validacion = false;
 			if(L_POST::validarDatosPost(['id','nombre','apellidos','telefono','correo','cargo','dni'])){
 				$validacion = true;

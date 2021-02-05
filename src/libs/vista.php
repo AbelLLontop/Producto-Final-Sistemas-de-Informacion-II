@@ -8,10 +8,6 @@ class Vista{
 		require 'src/public/resources/vistas/'.$nombreVista.'.php';
 	}
 
-	function saludar(){
-		echo "Hello world";
-	}
-
 }
 
 

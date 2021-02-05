@@ -9,7 +9,7 @@ class GestionEmpleadosModel extends Modelo{
 	public function traerListaEmpleados():array{
 		$empleados = [];
 		try{
-			$query = $this->db->connect()->query("SELECT * FROM empleados");
+			$query = $this->conexion->query("SELECT * FROM empleados");
 			while($row=$query->fetch()){
 				$empleado = new Empleado($row);
 				array_push($empleados,$empleado);
@@ -23,7 +23,7 @@ class GestionEmpleadosModel extends Modelo{
 	public function insertarEmpleado($datosEmpleado):bool{
 		$nuevoEmpleado = new Empleado($datosEmpleado);
 		try{
-			$query = $this->db->connect()->prepare('INSERT INTO empleados (nombre,apellidos,telefono,correo,cargo,dni) VALUES (:nombre,:apellidos,:telefono,:correo,:cargo,:dni)');
+			$query = $this->conexion->prepare('INSERT INTO empleados (nombre,apellidos,telefono,correo,cargo,dni) VALUES (:nombre,:apellidos,:telefono,:correo,:cargo,:dni)');
 			$query->execute(
 				[
 					"nombre"=>$nuevoEmpleado->getNombre(),
@@ -41,7 +41,7 @@ class GestionEmpleadosModel extends Modelo{
 	}
 	public function actualizarEmpleado($empleado):bool{
 				try{
-					$query = $this->db->connect()->prepare('UPDATE empleados SET nombre=:nombre,apellidos=:apellidos,telefono=:telefono ,correo=:correo, cargo=:cargo, dni=:dni  WHERE id=:id');
+					$query = $this->conexion->prepare('UPDATE empleados SET nombre=:nombre,apellidos=:apellidos,telefono=:telefono ,correo=:correo, cargo=:cargo, dni=:dni  WHERE id=:id');
 					$query->execute($empleado);
 					return true;
 
@@ -52,7 +52,7 @@ class GestionEmpleadosModel extends Modelo{
 
 	public function eliminarEmpleado($idEmpleado):bool{
 		try{
-			$query = $this->db->connect()->prepare('DELETE FROM empleados where id=:id');
+			$query = $this->conexion->prepare('DELETE FROM empleados where id=:id');
 			$query->execute($idEmpleado);
 				return true;
 		}catch(PDOException $e){
