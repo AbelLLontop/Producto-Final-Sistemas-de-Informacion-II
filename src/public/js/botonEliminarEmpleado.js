@@ -1,4 +1,4 @@
-tablaEmpleado.botonesEliminar.forEach((botonEliminar)=>{
+tablaEmpleado.botonesEliminar.forEach((botonEliminar)=>{   
     botonEliminar.addEventListener('click',function(e){
       const datos = new FormData();
       datos.append("id",botonEliminar.dataset.id);
@@ -12,6 +12,7 @@ tablaEmpleado.botonesEliminar.forEach((botonEliminar)=>{
       .then(data=>{
         if(data.estado){
         const fila = document.querySelector(`#fila-${data.id}`);
+        console.log(data.mensaje);
            tablaEmpleado.cuerpo.removeChild(fila);
            if(tablaEmpleado.cuerpo.childElementCount==0){
             tablaEmpleado.mensajeTablaVacia.style.display='flex';

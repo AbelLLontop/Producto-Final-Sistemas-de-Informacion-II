@@ -1,0 +1,23 @@
+:root{
+	--color_fondoGeneral:#E5E5E5;
+	--color_textoGenera:black;
+
+}
+
+.nocturno{
+	--color_fondoGeneral:#0C111F;
+	--color_textoGeneral:white;
+}
+
+
+.contenido_general{
+	width: 100%;
+	background:var(--color_fondoGeneral);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap:20px;
+	position: relative;
+	color:var(--color_textoGeneral);
+}
+

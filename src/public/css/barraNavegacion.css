@@ -5,13 +5,13 @@
 	--color_fondoItemSeleccionado:#1064CF;
 	--color_textoItemSeleccionado:white;
 	--color_iconoItemSeleccionado:white;
-	
+
 	--color_textoItemNoSeleccionado:#8C8987;
 	--color_iconoItemNoSeleccionado:#64686d;
 
 	--color_iconoItemHoverSeleccionado:#27292b;
 	--color_textoItemHoverSeleccionado:#27292b;
-	
+
 	--color_img:black;
 	--color_cabeceraNombreNav:#8C8987;
 	--color_cabeceraCargoNav:#3B3B3B;
@@ -28,13 +28,14 @@
 	--color_cabeceraCargoNav:#555962;
 	--color_botonInicio:white;
 	--color_iconoBotonInicio:#D8DFE2;
-	--color_fondoItemSeleccionado:none;
+	--color_fondoItemSeleccionado:#0c111f;
+
 	--color_textoItemSeleccionado:#1064CF;
 	--color_iconoItemSeleccionado:#1064CF;
 	--color_textoItemNoSeleccionado:#D8DFE2;
 	--color_iconoItemNoSeleccionado:#D8DFE2;
 	--color_iconoItemHoverSeleccionado:#898C8F;
-	--color_textoItemHoverSeleccionado:#898C8F;	
+	--color_textoItemHoverSeleccionado:#898C8F;
 	--color_tituloAccionLinks:#3F79CF;
 }
 
@@ -79,11 +80,11 @@
 .inicio a{
 	color:var(--color_botonInicio);
 	text-decoration: none;
-	gap:8px;	
+	gap:8px;
 	display: flex;
 	align-items: center;
 	margin: 0;
-	padding: 12px 18px;	
+	padding: 12px 18px;
 	border-radius: 8px;
 	font-weight: normal;
 	font-size: 16px;
@@ -128,7 +129,7 @@ fill:var(--color_iconoItemNoSeleccionado);
 	width: 20px;
 	height: 20px;
 	background-size: cover;
-	background-image: url('http://localhost/SI/src/public/svg/flecha.svg');
+	background-image: url('http://localhost/GITHUB/Producto-Final-Sistemas-de-Informacion-II/public/svg/flecha.svg');
 	position: absolute;
 	right: 20px;
 }

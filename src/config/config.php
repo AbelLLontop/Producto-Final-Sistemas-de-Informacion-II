@@ -1,5 +1,5 @@
 <?php
-$estadoAplicacion = "produccion";
+$estadoAplicacion = "desarrollo";
 
 if($estadoAplicacion=="desarrollo"){
 	define('URL','http://localhost/GITHUB/Producto-Final-Sistemas-de-Informacion-II/');

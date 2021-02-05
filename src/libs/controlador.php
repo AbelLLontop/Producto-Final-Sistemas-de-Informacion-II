@@ -1,6 +1,7 @@
-<?php 
+<?php
 
 class Controlador{
+	public Modelo $modelo;
 	function __construct(){
 		$this->vista = new Vista();
 	}

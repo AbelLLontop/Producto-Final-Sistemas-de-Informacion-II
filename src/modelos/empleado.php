@@ -1,13 +1,13 @@
-<?php 
+<?php
 class Empleado{
-	private $id; 
+	private $id;
 	private $nombre;
 	private $apellidos;
 	private $telefono;
 	private $correo;
-	private $cargo; 
+	private $cargo;
 	private $dni;
-	 
+
 	public function __construct($datos){
 		$this->id = $datos['id']??'default';
 		$this->nombre = $datos['nombre'];
@@ -17,7 +17,6 @@ class Empleado{
 		$this->cargo = $datos['cargo'];
 		$this->dni = $datos['dni'];
 	}
-
 
 	public function getId(){
 		return $this->id;

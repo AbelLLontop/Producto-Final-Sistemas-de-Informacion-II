@@ -1,12 +1,17 @@
-<?php 
+<?php
 
 class Vista{
-	function __construct(){	
+	function __construct(){
 	}
 
 	function render($nombreVista){
-		require 'src/vistas/'.$nombreVista.'.php';
+		require 'src/public/resources/vistas/'.$nombreVista.'.php';
 	}
+
+	function saludar(){
+		echo "Hello world";
+	}
+
 }
 
 

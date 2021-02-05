@@ -1,7 +1,8 @@
  <?php
-include_once 'src/modelos/empleado.php';
+include_once 'src/dominio/modelos/empleado.php';
 
-class GestionEmpleadosModel extends Modelo{
+
+class DatosEmpleado extends Modelo{
 	public function __construct(){
 		parent::__construct();
 	}
