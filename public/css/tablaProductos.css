@@ -1,0 +1,180 @@
+:root{
+    --color_cabeceraTabla:#f3f3f3;
+    --color_textoCabeceraTabla:black;
+    --color_contenidoTabla:white;
+    --color_textoContenidoTabla:black;
+    --color_bordesTabla:#d2d2d2;
+    --color_filaHover:#f3f3f3;
+    --color_btnEditar:#1064CF;
+    --color_btnEditarHover:#1161c7;
+    --color_btnEliminar:#D64040;
+    --color_btnEliminarHover:#cc3d3d;
+    --color_btnDetalles:#1064CF;
+    --color_btnDetallesHover:#1161c7;
+    --color_textoBotones:white;
+    --color_btnAgregar:#1064CF; 
+    --color_contenedorTabla:white;
+    --color_iconoBotones:white;
+    --color_textoMensajeTablaVacia:#bdbdbd;
+    --color_bordeMensajeTablaVacia:#D2D2D2;
+  
+
+
+}
+
+.nocturno{
+    --color_cabeceraTabla:none;
+    --color_textoCabeceraTabla:#FDFCFB;
+    --color_contenidoTabla:none;
+    --color_textoContenidoTabla:#9D99A5;
+    --color_bordesTabla:#0D1221;
+    --color_textoBotones:white;
+    --color_btnAgregar:#1064CF;
+    --color_contenedorTabla:#121729;
+    --color_iconoBotones:white;
+    --color_textoMensajeTablaVacia:#bdbdbda6;
+    --color_bordeMensajeTablaVacia:#0C111F;
+
+
+
+
+ 
+    --color_filaHover:#161c33;
+
+}
+
+
+
+.tabla{	
+    z-index: 2;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 4px;
+}
+tbody{
+    background:var(--color_contenidoTabla);
+    color:var(--color_textoContenidoTabla);
+}
+
+.tabla tr:hover:not(.cabecera){
+    background: var(--color_filaHover);
+}
+
+th{
+    background: var(--color_cabeceraTabla);
+    color: var(--color_textoCabeceraTabla);
+
+}
+td,th,tr{
+    border:solid 1px var(--color_bordesTabla);
+}
+
+.tabla th{
+    padding:20px 12px;
+}
+
+.tabla td,th{
+    padding: 4px 12px;
+}
+
+
+.btn_editar{
+    background:var(--color_btnEditar); 
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+.btn_editar:hover{
+    background: var(--color_btnEditarHover);
+}
+.btn_editar svg{
+    width: 20px;
+    height: 20px;
+}
+.btn_eliminar{
+    background:var(--color_btnEliminar);
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+.btn_eliminar:hover{
+    background:var(--color_btnEliminarHover);
+}
+
+.btn_eliminar svg{
+    width: 20px;
+    height: 20px;
+}
+
+
+.btn_detalles{
+    background:var(--color_btnDetalles);
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+.btn_detalles:hover{
+    background:var(--color_btnDetallesHover);
+}
+
+.btn_detalles svg{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+.contenedorTabla{
+    height: 100%;
+    background: var(--color_contenedorTabla);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 10px;
+    border-radius: 20px;
+}
+
+
+.mensajetablaVacia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color:var(--color_textoMensajeTablaVacia);
+    font-size: 3em;
+    border:solid 1px var(--color_bordeMensajeTablaVacia);
+    border-top:none;
+
+} 
+
+.btn{
+    border:none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size:16px;
+    color:var(--color_textoBotones);
+    cursor:pointer;
+}
+.btn svg{
+    fill:var(--color_iconoBotones);
+}
+
+.btn_agregar{
+    background:var(--color_btnAgregar);
+    width: 140px;
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+
+.btn_agregar svg{
+    width: 28px;
+    height: 28px;
+}
+

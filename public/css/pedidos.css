@@ -1,0 +1,134 @@
+:root{
+    --color_fondoGeneral:#E5E5E5;
+    --color_fondoBusqueda:none;
+    --color_bordeBusqueda:#d8d8d8;
+     --color_btnEditar:#1064CF;
+    --color_btnEditarHover:#1161c7;
+    --color_btnEliminar:#D64040;
+    --color_btnEliminarHover:#cc3d3d;
+    --color_btnDetalles:#1064CF;
+    --color_btnDetallesHover:#1161c7;
+       --color_contenidoTabla:white;
+    --color_textoContenidoTabla:black;
+       --color_bordesTabla:#d2d2d2;
+ --color_cabeceraTabla:#f3f3f3;
+    --color_textoCabeceraTabla:black;
+        --color_contenedorTabla:white;
+
+
+}
+
+.nocturno{
+    --color_fondoGeneral:#0C111F;
+    --color_fondoBusqueda:#060910;
+    --color_bordeBusqueda:#0A0E1A;
+      --color_contenidoTabla:none;
+    --color_textoContenidoTabla:#9D99A5;
+        --color_bordesTabla:#0D1221;
+
+ --color_cabeceraTabla:none;    
+ --color_contenedorTabla:#121729;
+
+    --color_textoCabeceraTabla:#FDFCFB;
+
+}
+
+
+.contenido_general{
+    width: 100%;
+    background:var(--color_fondoGeneral);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    gap:20px;
+}
+
+.tabla{
+    width: 100%;
+    height: 100%;
+    background: red;
+    font-size: 14px;
+    background: var(--color_contenedorTabla);
+    padding: 20px;
+        border-radius: 20px;
+
+}
+
+
+.tabla table{
+        border-collapse: collapse;
+        width: 100%;
+}
+
+
+.tabla th{
+      background: var(--color_cabeceraTabla);
+    color: var(--color_textoCabeceraTabla);
+    padding:20px 12px;
+}
+
+.tabla td,th{
+    padding: 4px 12px;
+}
+
+
+
+.tabla th, td {
+   text-align: left;
+   vertical-align: middle;
+border:solid 1px var(--color_bordesTabla);
+}
+
+
+.tabla tbody{
+     background:var(--color_contenidoTabla);
+    color:var(--color_textoContenidoTabla);
+}
+
+
+
+.btn{
+    padding: 8px 4px;
+    border:none;
+    color:white;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.btn_estado{
+    background:var(--color_btnEditar); 
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+.btn_estado:hover{
+    background: var(--color_btnEditarHover);
+}
+
+.btn_eliminar{
+    background:var(--color_btnEliminar);
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+.btn_eliminar:hover{
+    background:var(--color_btnEliminarHover);
+}
+
+
+.btn_detalles{
+    background:var(--color_btnDetalles);
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+.btn_detalles:hover{
+    background:var(--color_btnDetallesHover);
+}
+
+h1,h2,h3,h4{
+        color:var(--color_textoCabeceraTabla);
+
+}

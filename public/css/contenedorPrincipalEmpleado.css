@@ -1,0 +1,39 @@
+:root{
+    --color_fondoGeneral:#E5E5E5;
+    --color_fondoBusqueda:none;
+    --color_bordeBusqueda:#d8d8d8;
+   
+
+}
+
+.nocturno{
+    --color_fondoGeneral:#0C111F;
+    --color_fondoBusqueda:#060910;
+    --color_bordeBusqueda:#0A0E1A;
+
+}
+
+
+ .contenido_general{
+    width: 100%;
+    background:var(--color_fondoGeneral);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    position: relative;
+    overflow:hidden;
+}
+
+.busqueda{
+    width: 400px;
+    padding: 12px;
+    font-size:16px;
+    outline: none;
+    border:none;
+    border-radius: 12px;
+    border:solid 1px var(--color_bordeBusqueda);
+    width: 100%;
+    background: var(--color_fondoBusqueda)
+}
+
