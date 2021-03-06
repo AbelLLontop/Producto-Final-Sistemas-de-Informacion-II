@@ -6,47 +6,67 @@ class Empleado {
     private $nombres; 
     private $apellidos;
     private $telefono;
-    private $correo;
+    private $correo; 
     private $cargo; 
     private $dni;
 
-    public function __construct($datos) {
-        $this->id = $datos['id']??'default';
-        $this->nombres = $datos['nombres'];
-        $this->apellidos = $datos['apellidos'];
-        $this->telefono =$datos['telefono'];
-        $this->correo = $datos['correo']; 
-        $this->cargo = $datos['cargo'];
-        $this->dni = $datos['dni'];
-    } 
-
-    public function getId() {
+    function getId() {
         return $this->id;
     }
 
-    public function getDni() {
-        return $this->dni;
-    }
-
-    public function getNombres() {
+    function getNombres() {
         return $this->nombres;
     }
 
-    public function getApellidos() {
+    function getApellidos() {
         return $this->apellidos;
     }
 
-    public function getTelefono() {
+    function getTelefono() {
         return $this->telefono;
     }
 
-    public function getCorreo() {
+    function getCorreo() {
         return $this->correo;
     }
 
-    public function getCargo() {
+    function getCargo() {
         return $this->cargo;
     }
+
+    function getDni() {
+        return $this->dni;
+    }
+
+    function setId($id): void {
+        $this->id = $id;
+    }
+
+    function setNombres($nombres): void {
+        $this->nombres = $nombres;
+    }
+
+    function setApellidos($apellidos): void {
+        $this->apellidos = $apellidos;
+    }
+
+    function setTelefono($telefono): void {
+        $this->telefono = $telefono;
+    }
+
+    function setCorreo($correo): void {
+        $this->correo = $correo;
+    }
+
+    function setCargo($cargo): void {
+        $this->cargo = $cargo;
+    }
+
+    function setDni($dni): void {
+        $this->dni = $dni;
+    }
+
+
 
 }
 

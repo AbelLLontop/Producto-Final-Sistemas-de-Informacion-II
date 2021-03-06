@@ -9,7 +9,8 @@ class Ruteador {
         $this->url = $url;
     }
 
-    public function routear($url, $funcion) {
+    public function routear($url, $funcion,$permisos=true) {
+    if($permisos){        
         $urlOriginal = $this->url;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
@@ -33,6 +34,7 @@ class Ruteador {
         if ($igualdad) {
             $funcion($datosRetorno);
             $this->existeRuta = true;
+        }
         }
     }
 

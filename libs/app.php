@@ -16,8 +16,7 @@ class App {
             include_once $filename;
         }
         $ROUTER->porDefecto(function() {
-            $this->controlador = $this->obtenerControlador(['C_Errores']);
-            $this->controlador->render();
+            Errores::mensaje("Pagina No Encontrada");
         });
     }
 

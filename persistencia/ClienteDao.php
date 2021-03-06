@@ -6,26 +6,32 @@ include_once 'DAO.php';
 
 class ClienteDao extends DAO {
  
-    public function listar(): array {
+    public function listar(): array { 
         $clientes = [];
         try {
             $query = $this->conexion->query("SELECT * FROM clientes");
             while ($datos = $query->fetch()) { 
-                $cliente = new Cliente($datos);
+                $cliente = new Cliente();
+                $cliente->setId($datos['id']);
+                $cliente->setNombres($datos['nombres']);
+                $cliente->setApellidos($datos['apellidos']);
+                $cliente->setDireccion($datos['direccion']);
+                $cliente->setTelefono($datos['telefono']);
+                $cliente->setCorreo($datos['correo']);
+                $cliente->setDni($datos['dni']);                
                 array_push($clientes, $cliente);
             }
             return $clientes;
         } catch (PDOException $e) {
-            return [];
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
     public function crear($cliente): bool {
         try {
-            $query = $this->conexion->prepare('INSERT INTO clientes (id,nombres,apellidos,telefono,correo,direccion,dni) VALUES (:id,:nombres,:apellidos,:telefono,:correo,:direccion,:dni)');
+            $query = $this->conexion->prepare('INSERT INTO clientes (nombres,apellidos,telefono,correo,direccion,dni) VALUES (:nombres,:apellidos,:telefono,:correo,:direccion,:dni)');
 
             $query->execute([
-                "id"=>$cliente->getId(),
                 "nombres"=>$cliente->getNombres(),
                 "apellidos"=>$cliente->getApellidos(),
                 "telefono"=>$cliente->getTelefono(),
@@ -35,7 +41,7 @@ class ClienteDao extends DAO {
             ]);
             return true;
         } catch (PDOException $e) {
-            return false;
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
@@ -54,7 +60,7 @@ class ClienteDao extends DAO {
             ]);
             return true;
         } catch (PDOException $e) {
-            return false;
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
@@ -64,26 +70,32 @@ class ClienteDao extends DAO {
             $query->execute($id);
             return true;
         } catch (PDOException $e) {
-            return false;
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
     public function leer($id) {
-        $empleados = [];
         try {
             $query = $this->conexion->prepare("SELECT * FROM clientes where dni=:id");
             $query->execute(["id"=>$id]);
             
             $data = $query->fetch();
             $cliente=[];
-            if($data){
-                 $cliente = new Cliente($data);     
+            if($datos){
+                $cliente = new Cliente();
+                $cliente->setId($datos['id']);
+                $cliente->setNombres($datos['nombres']);
+                $cliente->setApellidos($datos['apellidos']);
+                $cliente->setDireccion($datos['direccion']);
+                $cliente->setTelefono($datos['telefono']);
+                $cliente->setCorreo($datos['correo']);
+                $cliente->setDni($datos['dni']); 
             }            
             return $cliente;
            
         } catch (PDOException $e) {
-            print_r("fallo");
-            return [];
+                       Errores::mensaje($e->getMessage(),"Error en la consulta");        
+
         }
     }
 

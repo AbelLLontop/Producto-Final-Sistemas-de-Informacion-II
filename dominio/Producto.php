@@ -2,7 +2,7 @@
 
 class Producto {
 
-    private $id;
+    private $id; 
     private $nombre;
     private $precio;
     private $categoria;
@@ -10,43 +10,62 @@ class Producto {
     private $descripcion;
     private $imagen;
  
- 
-    public function __construct($datos) {
-        $this->id = $datos['id'] ?? 'default';
-        $this->stock = $datos['stock'];
-        $this->descripcion = $datos['descripcion'];
-        $this->nombre ="".$datos['nombre'];
-        $this->precio = $datos['precio']; 
-        $this->categoria = $datos['categoria'];
-        $this->imagen = $datos['imagen'];
-    }
-
-    public function getStock(){
-        return $this->stock;
-    } 
-    public function getImagen(){
-        return $this->imagen;
-    } 
-
-    public function getDescripcion(){
-       return $this->descripcion;
-    }
-
-    public function getId() {
+    function getId() {
         return $this->id;
     }
 
-    public function getNombre(){
+    function getNombre() {
         return $this->nombre;
     }
 
-    public function getPrecio(){
+    function getPrecio() {
         return $this->precio;
     }
 
-    public function getCategoria(){
+    function getCategoria() {
         return $this->categoria;
     }
+
+    function getStock() {
+        return $this->stock;
+    }
+
+    function getDescripcion() {
+        return $this->descripcion;
+    }
+
+    function getImagen() {
+        return $this->imagen;
+    }
+
+    function setId($id): void {
+        $this->id = $id;
+    }
+
+    function setNombre($nombre): void {
+        $this->nombre = $nombre;
+    }
+
+    function setPrecio($precio): void {
+        $this->precio = $precio;
+    }
+
+    function setCategoria($categoria): void {
+        $this->categoria = $categoria;
+    }
+
+    function setStock($stock): void {
+        $this->stock = $stock;
+    }
+
+    function setDescripcion($descripcion): void {
+        $this->descripcion = $descripcion;
+    }
+
+    function setImagen($imagen): void {
+        $this->imagen = $imagen;
+    }
+
 
 
 }

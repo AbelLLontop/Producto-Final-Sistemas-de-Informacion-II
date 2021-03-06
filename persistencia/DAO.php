@@ -1,11 +1,11 @@
 <?php
-
+include_once 'Conexion.php';
 /* @author ABEL */
 
 abstract class DAO {
     public $conexion;
     public function __construct() {
-        $this->conexion=Database::getConnect();
+        $this->conexion=Conexion::getConnect();
     }
 
     abstract public function crear($object);
@@ -18,3 +18,4 @@ abstract class DAO {
 
     abstract public function eliminar($id);
 }
+

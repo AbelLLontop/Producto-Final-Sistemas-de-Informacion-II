@@ -108,6 +108,8 @@ class BotonesEditar extends Boton{
 
 const tabla = new Tabla('tabla');
 
+
+
 tabla.addBotones(new BotonesEliminar());
 tabla.addBotones(new BotonesEditar());
 tabla.actualizar();

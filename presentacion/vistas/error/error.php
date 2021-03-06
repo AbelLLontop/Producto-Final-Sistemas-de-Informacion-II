@@ -4,8 +4,9 @@ Importar::headCierre();
 ?>
 
 
-<h1>Página No Encontrada</h1>
-<h2>Vuelva a la Pagina Anterior</h2>
+<h1><?= $this->titulo ?></h1>
+<h2><?= $this->mensaje ?></h2>
+<h3><?= $this->mensaje2 ?></h2>
 
 <style>
 	:root{

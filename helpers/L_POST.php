@@ -24,7 +24,7 @@ class L_POST {
         }
         return $dato;
         }else{
-            return [];
+            Errores::mensaje("Error en la validacion de los Datoa");
         }
     }
 

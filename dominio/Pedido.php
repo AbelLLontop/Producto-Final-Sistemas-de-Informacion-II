@@ -9,50 +9,63 @@ class Pedido{
 	private $repartidor;
 	private $items = [];
 
-	public function __construct($datos) {
-		$this->id = $datos['id'] ?? 'default';
-		$this->estado = $datos['estado'];
-		$this->fechaPedido = $datos['fechapedido'];
-		$this->fechaEntrega = $datos['fechaEntrega'];
-	}
+        function getId() {
+            return $this->id;
+        }
 
-	
-	public function setCliente(Cliente $cliente){
-		$this->cliente = $cliente;
-	}
-	
-	public function getId(){
-		return $this->id;
-	}
-	public function getCliente(){
-		return $this->cliente;
-	}
-	public function getFechaPedido(){
-		return $this->fechapedido;
-	}
-	public function getFechaEntrega(){
-		return $this->fechaEntrega;
-	}
-	public function getEstado(){
-		return $this->estado;
-	}
+        function getCliente() {
+            return $this->cliente;
+        }
 
-	public function getRepartidor(){
-		return $this->repartidor;
-	}
-	public function setRepartidor(Repartidor $repartidor){
-		$this->repartidor = $repartidor;
-	}
-	public function getRepartidor(){
-		return $this-repartidor;
-	}
+        function getFechaPedido() {
+            return $this->fechaPedido;
+        }
 
-	public function setItems(Item $item){
-		array_push($this->items,$item);
-	}
-	public function getItems(){
-		return $items;
-	}
+        function getFechaEntrega() {
+            return $this->fechaEntrega;
+        }
+
+        function getEstado() {
+            return $this->estado;
+        }
+
+        function getRepartidor() {
+            return $this->repartidor;
+        }
+
+        function getItems() {
+            return $this->items;
+        }
+
+        function setId($id): void {
+            $this->id = $id;
+        }
+
+        function setCliente($cliente): void {
+            $this->cliente = $cliente;
+        }
+
+        function setFechaPedido($fechaPedido): void {
+            $this->fechaPedido = $fechaPedido;
+        }
+
+        function setFechaEntrega($fechaEntrega): void {
+            $this->fechaEntrega = $fechaEntrega;
+        }
+
+        function setEstado($estado): void {
+            $this->estado = $estado;
+        }
+
+        function setRepartidor($repartidor): void {
+            $this->repartidor = $repartidor;
+        }
+
+        function addItem($item): void {
+            array_push($this->items,$item);
+        }
+
+
 }
 
 

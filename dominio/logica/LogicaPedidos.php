@@ -1,4 +1,6 @@
 <?php 
+include_once RUTA_PERSISTENCIA.'DaoFactoryMysql.php';
+include_once 'Logica.php';
 
 class LogicaPedidos extends Logica{ 
 
@@ -14,12 +16,19 @@ class LogicaPedidos extends Logica{
         return $this->daoSQL->getPedidoDao()->actualizar($pedido);
     }
 
-    public function eliminarPedido($id): bool {
-        return $this->daoSQL->getPedidoDao()->eliminar($id);
+    public function eliminarPedido($pedido): bool {
+        return $this->daoSQL->getPedidoDao()->eliminar($pedido);
     }
     
     public function leerPedido($id) {
         return $this->daoSQL->getPedidoDao()->leer($id);
+    }
+    public function listarDetallesPedido($id) {
+        return $this->daoSQL->getPedidoDao()->listarDetallesPedido($id);
+    }
+
+    public function editarPedido($pedido){
+        return $this->daoSQL->getPedidoDao()->editarPedido($pedido);
     }
     
 

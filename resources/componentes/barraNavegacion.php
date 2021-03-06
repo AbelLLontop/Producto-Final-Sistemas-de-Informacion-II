@@ -3,7 +3,8 @@
     <header class="perfil_usuario">
         <div class="contenedor_imagen">
             <img src="https://i.pinimg.com/474x/3a/f5/62/3af562a54b9730b8c2d8b48ab9da7bac.jpg" alt="">
-        </div>
+            
+                    </div>
         <div class="datosUsuario">
             <span class="nombre">Abel
                 <label for="nocturno">
@@ -19,11 +20,12 @@
 
         <nav>
             <ul class="links" >
+                
                 <li><a
                         class="item_link <?= $data["seccion__productos"] ?? "" ?>"
                         href=<?= Importar::direccion('GestionProductos'); ?>
                         >
-                        <?= Importar::SVG('producto') ?>Productos</a></li>
+                        <?= Importar::SVG('producto') ?>Almacen</a></li>
                 <li><a
                         class="item_link <?= $data["seccion__clientes"] ?? "" ?>"
                         href=<?= Importar::direccion('GestionClientes'); ?>

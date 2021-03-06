@@ -10,43 +10,63 @@ class Cliente {
     private $correo;
     private $dni;
 
-    public function __construct($datos) {
-        $this->id = $datos['id'] ?? 'default';
-        $this->nombres = $datos['nombres'];
-        $this->apellidos = $datos['apellidos'];
-        $this->direccion = $datos['direccion'];
-        $this->telefono = $datos['telefono'];
-        $this->correo = $datos['correo'];
-        $this->dni = $datos['dni'];
-    }
-
-    public function getId() {
+    function getId() {
         return $this->id;
     }
 
-    public function getNombres() {
+    function getNombres() {
         return $this->nombres;
     }
 
-    public function getApellidos() {
+    function getApellidos() {
         return $this->apellidos;
     }
 
-    public function getDireccion() {
+    function getDireccion() {
         return $this->direccion;
     }
 
-    public function getTelefono() {
+    function getTelefono() {
         return $this->telefono;
     }
 
-    public function getCorreo() {
+    function getCorreo() {
         return $this->correo;
     }
 
-    public function getDni() {
+    function getDni() {
         return $this->dni;
     }
+
+    function setId($id): void {
+        $this->id = $id;
+    }
+
+    function setNombres($nombres): void {
+        $this->nombres = $nombres;
+    }
+
+    function setApellidos($apellidos): void {
+        $this->apellidos = $apellidos;
+    }
+
+    function setDireccion($direccion): void {
+        $this->direccion = $direccion;
+    }
+
+    function setTelefono($telefono): void {
+        $this->telefono = $telefono;
+    }
+
+    function setCorreo($correo): void {
+        $this->correo = $correo;
+    }
+
+    function setDni($dni): void {
+        $this->dni = $dni;
+    }
+
+
 
 }
 

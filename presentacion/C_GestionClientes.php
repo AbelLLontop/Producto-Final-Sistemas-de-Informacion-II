@@ -1,15 +1,14 @@
- <?php
+<?php
 
-include_once RUTA_HELPER.'L_POST.php';
-include_once RUTA_HELPER.'JSON.php'; 
-include_once RUTA_LOGICA.'LogicaCliente.php';
+include_once RUTA_HELPER . 'L_POST.php';
+include_once RUTA_HELPER . 'JSON.php';
+include_once RUTA_LOGICA . 'LogicaCliente.php';
 
 class C_GestionClientes extends Controlador {
 
     function __construct() {
         parent::__construct();
-        $this->listDatosCliente = ['id', 'nombres', 'apellidos','direccion', 'telefono', 'correo', 'dni'];
-        $this->datosPost = $this->obtenerDatosPost($this->listDatosCliente);
+        $this->listDatosCliente = ['id', 'nombres', 'apellidos', 'direccion', 'telefono', 'correo', 'dni'];
         $this->logica = new LogicaCliente();
     }
 
@@ -22,45 +21,51 @@ class C_GestionClientes extends Controlador {
     }
 
     public function createCliente(): void {
-        if ($this->datosPost) {
-            $cliente = new Cliente($this->datosPost);
-            if ($this->logica->crearCliente($cliente)) { 
+        $this->datosPost = $this->obtenerDatosPost($this->listDatosCliente);
+            $cliente = new Cliente();
+            $cliente->setNombres($this->datosPost['nombres']);
+            $cliente->setApellidos($this->datosPost['apellidos']);
+            $cliente->setDireccion($this->datosPost['direccion']);
+            $cliente->setTelefono($this->datosPost['telefono']);
+            $cliente->setCorreo($this->datosPost['correo']);
+            $cliente->setDni($this->datosPost['dni']);
+            if ($this->logica->crearCliente($cliente)) {
                 $this->volver('GestionClientes');
             } else {
-                echo "error al insertar";
+                ERROR::mensaje("error al insertar");
             }
-        } else {
-            echo "error al validar los datos";
-        }
+         
     }
 
     public function updateCliente(): void {
-        if ($this->datosPost) {
-            $cliente = new Cliente($this->datosPost);
+        $this->datosPost = $this->obtenerDatosPost($this->listDatosCliente);
+
+            $cliente = new Cliente();
+            $cliente->setId($this->datosPost['id']);
+            $cliente->setNombres($this->datosPost['nombres']);
+            $cliente->setApellidos($this->datosPost['apellidos']);
+            $cliente->setDireccion($this->datosPost['direccion']);
+            $cliente->setTelefono($this->datosPost['telefono']);
+            $cliente->setCorreo($this->datosPost['correo']);
+            $cliente->setDni($this->datosPost['dni']);
             if ($this->logica->actualizarCliente($cliente)) {
                 $this->volver('GestionClientes');
             } else {
-                echo "Error al insertar Empleado";
+                ERROR::mensaje("error al insertar Empleado");
             }
-        } else {
-            echo "Error al validar";
-        }
+        
     }
 
     function deleteCliente(): void {
         $id = $this->obtenerDatosPost(['id']);
-        if ($id) {
             if ($this->logica->eliminarCliente($id)) {
                 $this->volver('GestionClientes');
             } else {
-                echo "error al eliminar Empleado";
+               ERROR::mensaje("error al eliminar Empleado");
             }
-        } else {
-            echo "error al validar el id";
-        }
+        
     }
-
-
+    
 
 }
 ?> 

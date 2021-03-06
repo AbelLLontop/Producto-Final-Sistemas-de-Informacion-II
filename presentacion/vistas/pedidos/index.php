@@ -3,9 +3,11 @@
 Importar::headInicio();
  
 Importar::css(['estilosGlobales',
-    'barraNavegacion','pedidos']);
+    'barraNavegacion','pedidos','formularioPedido']);
  
 Importar::headCierre(); 
+
+include_once 'componentes/formularios.php';
 
 Importar::componente('barraNavegacion', [
     "seccion__pedidos" => "seleccionado"
@@ -14,8 +16,8 @@ Importar::componente('barraNavegacion', [
 include_once 'componentes/contenedorPrincipal.php';
 
 
-Importar::js(['']);
+Importar::js(['tabla','tablaPedido']);
 
 
 Importar::footer();
-?>    
+?>      

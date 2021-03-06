@@ -1,5 +1,5 @@
 <?php
-
+ 
 /* @author ABEL */
 include_once RUTA_DOMINIO.'Empleado.php';
 include_once 'DAO.php';
@@ -12,20 +12,26 @@ class EmpleadoDao extends DAO {
             $query = $this->conexion->query("SELECT * FROM empleados");
             while ($datos = $query->fetch()) { 
                 $empleado = new Empleado($datos);
+                $empleado->setId($datos['id']);
+                $empleado->setNombres($datos['nombres']);
+                $empleado->setApellidos($datos['apellidos']);
+                $empleado->setTelefono($datos['telefono']);
+                $empleado->setCorreo($datos['correo']);
+                $empleado->setCargo($datos['cargo']);
+                $empleado->setDni($datos['dni']);   
                 array_push($empleados, $empleado);
             }
             return $empleados;
         } catch (PDOException $e) {
-            return [];
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
     public function crear($empleado): bool {
         try {
-            $query = $this->conexion->prepare('INSERT INTO empleados (id,nombres,apellidos,telefono,correo,cargo,dni) VALUES (:id,:nombres,:apellidos,:telefono,:correo,:cargo,:dni)');
+            $query = $this->conexion->prepare('INSERT INTO empleados (nombres,apellidos,telefono,correo,cargo,dni) VALUES (:nombres,:apellidos,:telefono,:correo,:cargo,:dni)');
 
             $query->execute([
-                "id"=>$empleado->getId(),
                 "nombres"=>$empleado->getNombres(),
                 "apellidos"=>$empleado->getApellidos(),
                 "telefono"=>$empleado->getTelefono(),
@@ -35,7 +41,7 @@ class EmpleadoDao extends DAO {
             ]);
             return true;
         } catch (PDOException $e) {
-            return false;
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
@@ -54,7 +60,7 @@ class EmpleadoDao extends DAO {
             ]);
             return true;
         } catch (PDOException $e) {
-            return false;
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
@@ -64,12 +70,11 @@ class EmpleadoDao extends DAO {
             $query->execute($idEmpleado);
             return true;
         } catch (PDOException $e) {
-            return false;
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
     public function leer($id) {
-        $empleados = [];
         try {
             $query = $this->conexion->prepare("SELECT * FROM empleados where dni=:id");
             $query->execute(["id"=>$id]);
@@ -82,8 +87,7 @@ class EmpleadoDao extends DAO {
             return $empleado;
            
         } catch (PDOException $e) {
-            print_r("fallo");
-            return [];
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 

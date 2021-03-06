@@ -1,25 +1,25 @@
 <?php 
-
 class Item{
 	private Producto $producto; 
 	private $cantidad;
 
+        function getProducto(): Producto {
+            return $this->producto;
+        }
 
-	private setProducto(Producto $producto){
-		$this->producto =$producto;
-	}
+        function getCantidad() {
+            return $this->cantidad;
+        }
 
-	private setCantidad($cantidad){
-		$this->cantidad =$cantidad;
-	}
+        function setProducto(Producto $producto): void {
+            $this->producto = $producto;
+        }
 
-	private getProducto(){
-		return $this->producto;
-	}
+        function setCantidad($cantidad): void {
+            $this->cantidad = $cantidad;
+        }
+
 	
-	private getCantidad(){
-		return $this->cantidad;
-	}	
 }
 
 

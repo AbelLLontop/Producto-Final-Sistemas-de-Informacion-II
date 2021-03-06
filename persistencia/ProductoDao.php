@@ -11,20 +11,26 @@ class ProductoDao extends DAO {
         try {
             $query = $this->conexion->query("SELECT * FROM productos");
             while ($datos = $query->fetch()) {
-                $producto = new Producto($datos);
+                $producto = new Producto();
+                $producto->setCategoria($datos['categoria']);
+                $producto->setDescripcion($datos['descripcion']);
+                $producto->setId($datos['id']);
+                $producto->setPrecio($datos['precio']);
+                $producto->setNombre($datos['nombre']);
+                $producto->setImagen($datos['imagen']);
+                $producto->setStock($datos['stock']);                         
                 array_push($productos, $producto);
             }
             return $productos;
         } catch (PDOException $e) {
-            return [];
+            Errores::mensaje($e->getMessage(),"Error en la consulta");        
         }
     }
 
     public function crear($producto): bool {
         try {
-            $query = $this->conexion->prepare('INSERT INTO productos (id,stock,descripcion,nombre,precio,categoria,imagen) VALUES (:id,:stock,:descripcion,:nombre,:precio,:categoria,:imagen)');
+            $query = $this->conexion->prepare('INSERT INTO productos (stock,descripcion,nombre,precio,categoria,imagen) VALUES (:stock,:descripcion,:nombre,:precio,:categoria,:imagen)');
              $query->execute([
-                "id"=>$producto->getId(),
                 "stock"=>$producto->getStock(),
                 "descripcion"=>$producto->getDescripcion(),
                 "nombre"=>$producto->getNombre(),
@@ -35,8 +41,8 @@ class ProductoDao extends DAO {
             ]);
             return true;
         } catch (PDOException $e) {
-            print_r($e);
-            return false;
+                       Errores::mensaje($e->getMessage(),"Error en la consulta");        
+
         }
     }
 
@@ -55,7 +61,8 @@ class ProductoDao extends DAO {
             ]);
             return true;
         } catch (PDOException $e) {
-            return false;
+                       Errores::mensaje($e->getMessage(),"Error en la consulta");        
+
         }
     }
 
@@ -65,7 +72,8 @@ class ProductoDao extends DAO {
             $query->execute($idProducto);
             return true;
         } catch (PDOException $e) {
-            return false;
+                       Errores::mensaje($e->getMessage(),"Error en la consulta");        
+
         }
     }
 

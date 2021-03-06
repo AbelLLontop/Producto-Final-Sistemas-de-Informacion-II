@@ -1,5 +1,5 @@
 <?php
-include_once './../persistencia/DaoFactoryMysql.php';
+include_once RUTA_PERSISTENCIA.'DaoFactoryMysql.php';
 include_once 'Logica.php';
 /* @author ABEL */
 

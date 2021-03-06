@@ -2,7 +2,7 @@
     <div class="contenedorFormualrioNuevo">
         <header>
             <h4>Actualizar Empleado</h4>
-            <p>Para crear y añadir un nuevo empleado a la lista complete el formulario siguiente con los datos del empleado y luego precione en guardar, caso contrario presionar el boton cancelar. </p>
+            <p>Para cambiar y actualizar un nuevo empleado, complete el formulario siguiente con los datos correspondientes y luego precione en actualizar, caso contrario presionar el boton cancelar. </p>
         </header>
         <form method="post" class="formulario" action=<?= $this->direccionEditar ?> >
 
